@@ -1,0 +1,120 @@
+#	1. Cloning - Remote(GitHub) to Local 2. Add files from Local to Remote Repository
+------------------------------------------------------------------------------------
+1.
+//go to targeted folder 
+LENOVO@DESKTOP-0M2JCMK MINGW64 ~
+$ cd /e/workspace
+
+LENOVO@DESKTOP-0M2JCMK MINGW64 /e/workspace
+$ cd test
+
+LENOVO@DESKTOP-0M2JCMK MINGW64 /e/workspace/test
+$ pwd
+/e/workspace/test
+
+// clone your remote project 
+LENOVO@DESKTOP-0M2JCMK MINGW64 /e/workspace/test
+$ git clone https://github.com/rmondal-tech/WebService-Spring-Jersy.git
+Cloning into 'WebService-Spring-Jersy'...
+remote: Enumerating objects: 53, done.
+remote: Counting objects: 100% (53/53), done.
+remote: Compressing objects: 100% (37/37), done.
+remote: Total 53 (delta 3), reused 41 (delta 1), pack-reused 0
+Receiving objects: 100% (53/53), 60.79 KiB | 267.00 KiB/s, done.
+Resolving deltas: 100% (3/3), done.
+
+-------------------------------------------
+2.
+//Add local  files to remote repo
+
+LENOVO@DESKTOP-0M2JCMK MINGW64 /e/workspace
+$ cd test1
+
+LENOVO@DESKTOP-0M2JCMK MINGW64 /e/workspace/test1
+$ pwd
+/e/workspace/test1
+
+// let git know this as a git folder whr we will work
+LENOVO@DESKTOP-0M2JCMK MINGW64 /e/workspace/test1
+$ git init
+Initialized empty Git repository in E:/workspace/test1/.git/
+
+LENOVO@DESKTOP-0M2JCMK MINGW64 /e/workspace/test1 (master)
+$ git status
+On branch master
+
+No commits yet
+
+nothing to commit (create/copy files and use "git add" to track)
+
+LENOVO@DESKTOP-0M2JCMK MINGW64 /e/workspace/test1 (master)
+$ git status
+On branch master
+
+No commits yet
+
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+        help.txt
+
+nothing added to commit but untracked files present (use "git add" to track)
+
+//add files to staging area
+LENOVO@DESKTOP-0M2JCMK MINGW64 /e/workspace/test1 (master)
+$ git add *
+
+LENOVO@DESKTOP-0M2JCMK MINGW64 /e/workspace/test1 (master)
+$ git status
+On branch master
+
+No commits yet
+
+Changes to be committed:
+  (use "git rm --cached <file>..." to unstage)
+        new file:   help.txt
+
+// commits all what is in staging 
+
+LENOVO@DESKTOP-0M2JCMK MINGW64 /e/workspace/test1 (master)
+$ git commit -m "test commit"
+[master (root-commit) 6415bd4] test commit
+ 1 file changed, 1 insertion(+)
+ create mode 100644 help.txt
+
+LENOVO@DESKTOP-0M2JCMK MINGW64 /e/workspace/test1 (master)
+$ git status
+On branch master
+nothing to commit, working tree clean
+
+// check all the connected remote server . 
+LENOVO@DESKTOP-0M2JCMK MINGW64 /e/workspace/test1 (master)
+$ git remote -v
+
+LENOVO@DESKTOP-0M2JCMK MINGW64 /e/workspace/test1 (master)
+$
+// add a remote serever. If cloned already , then not required
+LENOVO@DESKTOP-0M2JCMK MINGW64 /e/workspace/test1 (master)
+$ git remote add origin https://github.com/rmondal-tech/test.git
+
+LENOVO@DESKTOP-0M2JCMK MINGW64 /e/workspace/test1 (master)
+$ git remote -v
+origin  https://github.com/rmondal-tech/test.git (fetch)
+origin  https://github.com/rmondal-tech/test.git (push)
+
+// push committed files to remote repo
+LENOVO@DESKTOP-0M2JCMK MINGW64 /e/workspace/test1 (master)
+$ git push -u origin master
+Enumerating objects: 3, done.
+Counting objects: 100% (3/3), done.
+Writing objects: 100% (3/3), 224 bytes | 74.00 KiB/s, done.
+Total 3 (delta 0), reused 0 (delta 0), pack-reused 0
+remote:
+remote: Create a pull request for 'master' on GitHub by visiting:
+remote:      https://github.com/rmondal-tech/test/pull/new/master
+remote:
+To https://github.com/rmondal-tech/test.git
+ * [new branch]      master -> master
+Branch 'master' set up to track remote branch 'master' from 'origin'.
+
+LENOVO@DESKTOP-0M2JCMK MINGW64 /e/workspace/test1 (master)
+$
